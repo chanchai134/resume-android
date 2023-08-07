@@ -13,7 +13,7 @@ import chanchai134.resume.ui.theme.ResumeandroidTheme
 @Composable
 fun BottomNavigation(
     selectedMenu: Destination,
-    menus: List<Destination>,
+    menus: Array<Destination>,
     navigate: (Destination) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -34,6 +34,6 @@ fun BottomNavigation(
 @Composable
 fun BottomNavigationPreview() {
     ResumeandroidTheme {
-        BottomNavigation(Destination.getAll()[0], Destination.getAll(), {})
+        BottomNavigation(Destination.Home, Destination.values(), {})
     }
 }

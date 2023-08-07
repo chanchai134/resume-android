@@ -6,16 +6,10 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.ui.graphics.vector.ImageVector
 import chanchai134.resume.R
 
-sealed class Destination(
+enum class Destination(
     val route: String,
     @StringRes val label: Int,
     val icon: ImageVector
 ) {
-    object Home : Destination("home", R.string.app_name, Icons.Filled.Home)
-
-    companion object {
-        fun getAll(): List<Destination> {
-            return listOf(Home)
-        }
-    }
+    Home("home", R.string.app_name, Icons.Filled.Home)
 }
