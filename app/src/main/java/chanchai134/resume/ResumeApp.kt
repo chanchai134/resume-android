@@ -6,7 +6,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import chanchai134.resume.ui.navigation.Destination
-import chanchai134.resume.ui.navigation.ResumeNavigation
+import chanchai134.resume.ui.navigation.ResumeNavigationGraph
 
 @Composable
 fun ResumeApp(modifier: Modifier = Modifier) {
@@ -16,6 +16,6 @@ fun ResumeApp(modifier: Modifier = Modifier) {
         navController = navController,
         startDestination = Destination.Home.route,
         modifier = modifier,
-        builder = NavGraphBuilder::ResumeNavigation
+        builder = NavGraphBuilder::ResumeNavigationGraph
     )
 }

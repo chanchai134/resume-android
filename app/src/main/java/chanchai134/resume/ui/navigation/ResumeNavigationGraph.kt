@@ -4,6 +4,6 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import chanchai134.resume.ui.HomeScreen
 
-fun NavGraphBuilder.ResumeNavigation() {
+fun NavGraphBuilder.ResumeNavigationGraph() {
     composable(route = Destination.Home.route) { HomeScreen() }
 }
