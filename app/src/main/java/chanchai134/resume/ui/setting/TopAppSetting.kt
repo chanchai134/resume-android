@@ -37,7 +37,7 @@ fun TopAppSetting(
     )
 }
 
-@Preview("Light Theme", showBackground = true)
+@Preview("LightMode", showBackground = true)
 @Composable
 fun TopAppSettingPreview() {
     ResumeandroidTheme {
@@ -45,7 +45,7 @@ fun TopAppSettingPreview() {
     }
 }
 
-@Preview("Dark Theme", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
+@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 fun TopAppSettingDarkThemePreview() {
     ResumeandroidTheme {
