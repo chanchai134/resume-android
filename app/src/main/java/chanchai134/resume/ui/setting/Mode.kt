@@ -1,11 +1,9 @@
 package chanchai134.resume.ui.setting
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Share
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.annotation.DrawableRes
+import chanchai134.resume.R
 
-enum class Mode(val icon: ImageVector) {
-    Light(Icons.Filled.Share),
-    Dark(Icons.Filled.Search)
+enum class Mode(@DrawableRes val icon: Int) {
+    Light(R.drawable.ic_light_mode),
+    Dark(R.drawable.ic_dark_mode)
 }

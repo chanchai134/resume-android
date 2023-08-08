@@ -2,6 +2,8 @@ package chanchai134.resume.ui.setting
 
 import android.content.res.Configuration
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -9,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import chanchai134.resume.R
@@ -32,7 +36,11 @@ fun TopAppSetting(
         title = { Text(stringResource(title)) },
         actions = {
             IconButton({ onSwitchMode(displaySwitchMode)}) {
-                Icon(displaySwitchMode.icon, contentDescription = displaySwitchMode.name)
+                Icon(
+                    painterResource(displaySwitchMode.icon),
+                    contentDescription = displaySwitchMode.name,
+                    modifier = Modifier.width(dimensionResource(R.dimen.icon)).aspectRatio(1f)
+                )
             }
             IconButton({ onSwitchLanguage(displaySwitchLanguage)}) {
                 Text(displaySwitchLanguage.display)
