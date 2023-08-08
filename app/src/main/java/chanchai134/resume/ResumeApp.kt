@@ -5,11 +5,13 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import chanchai134.resume.extension.getCurrentLanguage
 import chanchai134.resume.extension.setLanguage
@@ -23,20 +25,37 @@ import chanchai134.resume.ui.setting.TopAppSetting
 @Composable
 fun ResumeApp(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
-    val backStackEntry by navController.currentBackStackEntryAsState() // null and value
-    val currentRoute = backStackEntry?.destination?.route
-    val currentDestination = Destination.getDestinationByRoute(currentRoute) ?: Destination.Home
+
+    val startDestination = Destination.Home
+    var currentDestination by rememberSaveable { mutableStateOf(startDestination) }
 
     val context = LocalContext.current
 
     Scaffold(
         modifier = modifier,
-        topBar = { TopAppSetting(currentDestination.label, context.getCurrentLanguage(), context::setLanguage, Mode.Light, {}) },
-        bottomBar = { BottomNavigation(currentDestination, Destination.allDestinations, { navController.navigate(it.route) }) }
+        topBar = {
+            TopAppSetting(
+                currentDestination.label,
+                context.getCurrentLanguage(),
+                context::setLanguage,
+                Mode.Light,
+                {}
+            )
+        },
+        bottomBar = {
+            BottomNavigation(
+                currentDestination,
+                Destination.allDestinations,
+                {
+                    currentDestination = it
+                    navController.navigate(it.route)
+                }
+            )
+        }
     ) {
         NavHost(
             navController = navController,
-            startDestination = Destination.Home.route,
+            startDestination = startDestination.route,
             modifier = modifier.padding(it),
             builder = NavGraphBuilder::ResumeNavigationGraph
         )
