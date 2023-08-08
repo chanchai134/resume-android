@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Resume</string>
+    <string name="app_name" translatable="false">Resume</string>
+    <string name="test_tran">en</string>
 </resources>
