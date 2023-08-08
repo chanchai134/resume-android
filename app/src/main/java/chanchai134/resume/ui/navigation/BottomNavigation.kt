@@ -20,11 +20,13 @@ fun BottomNavigation(
     NavigationBar(modifier) {
         menus.forEach {
             val label = stringResource(it.label)
+            val selected = selectedMenu.route == it.route
+
             NavigationBarItem(
                 icon = { Icon(it.icon, contentDescription = label) },
                 label = { Text(label) },
-                selected = selectedMenu.route == it.route,
-                onClick = { navigate(it) }
+                selected = selected,
+                onClick = { if(!selected) navigate(it) }
             )
         }
     }
@@ -34,6 +36,6 @@ fun BottomNavigation(
 @Composable
 fun BottomNavigationPreview() {
     ResumeandroidTheme {
-        BottomNavigation(Destination.Home, Destination.values(), {})
+        BottomNavigation(Destination.Home, Destination.allDestinations, {})
     }
 }

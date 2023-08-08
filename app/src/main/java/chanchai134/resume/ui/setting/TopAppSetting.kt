@@ -1,6 +1,7 @@
 package chanchai134.resume.ui.setting
 
 import android.content.res.Configuration
+import androidx.annotation.StringRes
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -8,12 +9,15 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import chanchai134.resume.R
 import chanchai134.resume.ui.theme.ResumeandroidTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppSetting(
+    @StringRes title: Int,
     currentLanguage: Language,
     onSwitchLanguage: (Language) -> Unit,
     currentMode: Mode,
@@ -25,7 +29,7 @@ fun TopAppSetting(
 
     TopAppBar(
         modifier = modifier,
-        title = {},
+        title = { Text(stringResource(title)) },
         actions = {
             IconButton({ onSwitchMode(displaySwitchMode)}) {
                 Icon(displaySwitchMode.icon, contentDescription = displaySwitchMode.name)
@@ -41,7 +45,7 @@ fun TopAppSetting(
 @Composable
 fun TopAppSettingPreview() {
     ResumeandroidTheme {
-        TopAppSetting(Language.EN, {}, Mode.Light, {})
+        TopAppSetting(R.string.app_name ,Language.EN, {}, Mode.Light, {})
     }
 }
 
@@ -49,6 +53,6 @@ fun TopAppSettingPreview() {
 @Composable
 fun TopAppSettingDarkThemePreview() {
     ResumeandroidTheme {
-        TopAppSetting(Language.EN, {}, Mode.Dark, {})
+        TopAppSetting(R.string.app_name, Language.EN, {}, Mode.Dark, {})
     }
 }
