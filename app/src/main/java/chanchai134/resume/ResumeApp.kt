@@ -54,7 +54,13 @@ fun ResumeApp(modifier: Modifier = Modifier) {
                 resumeViewModel.currentDestination,
                 Destination.allDestinations,
                 {
-                    navController.navigate(it.route)
+                    navController.navigate(it.route) {
+                        launchSingleTop = true
+                        restoreState = true
+                        popUpTo(Destination.Home.route) {
+                            saveState = true
+                        }
+                    }
                 },
                 Modifier.fillMaxWidth()
             )
