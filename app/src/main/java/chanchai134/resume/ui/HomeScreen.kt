@@ -15,11 +15,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import chanchai134.resume.R
 import chanchai134.resume.ui.theme.ResumeandroidTheme
@@ -34,17 +34,18 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             .verticalScroll(scrollState)
     ) {
         val (imageRef, textRef) = createRefs()
+        val padding = dimensionResource(R.dimen.padding)
 
         Image(
             painter = painterResource(R.drawable.portrait),
             contentScale = ContentScale.Fit,
             contentDescription = "owner portrait",
             modifier = Modifier
-                .width(280.dp)
+                .width(dimensionResource(R.dimen.portrait_width))
                 .aspectRatio(1f)
-                .clip(RoundedCornerShape(140.dp))
+                .clip(RoundedCornerShape(dimensionResource(R.dimen.portrait_round_corner)))
                 .constrainAs(imageRef) {
-                    top.linkTo(parent.top,24.dp)
+                    top.linkTo(parent.top,padding)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 }
@@ -55,11 +56,11 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             style = MaterialTheme.typography.titleLarge,
             textAlign = TextAlign.Center,
             modifier = modifier
-                .padding(horizontal = 24.dp)
+                .padding(horizontal = padding)
                 .wrapContentSize()
                 .constrainAs(textRef) {
-                    top.linkTo(imageRef.bottom,24.dp)
-                    bottom.linkTo(parent.bottom,24.dp)
+                    top.linkTo(imageRef.bottom,padding)
+                    bottom.linkTo(parent.bottom,padding)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 }
