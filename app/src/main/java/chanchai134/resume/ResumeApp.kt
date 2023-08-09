@@ -7,13 +7,12 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import chanchai134.resume.extension.getCurrentLanguage
 import chanchai134.resume.extension.getCurrentMode
@@ -27,20 +26,22 @@ import chanchai134.resume.ui.setting.TopAppSetting
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ResumeApp(modifier: Modifier = Modifier) {
-    val navController = rememberNavController()
-
-    val startDestination = Destination.Home
-    var currentDestination by rememberSaveable {
-        mutableStateOf(startDestination)
-    }
-
     val context = LocalContext.current
+    val resumeViewModel = viewModel<ResumeViewModel>()
+    val navController = rememberNavController()
+    val backStackEntry by navController.currentBackStackEntryAsState()
+
+    backStackEntry?.let {
+        it.destination.route?.let {
+            resumeViewModel.setCurrentDestination(Destination.getDestinationByRoute(it)!!)
+        }
+    }
 
     Scaffold(
         modifier = modifier,
         topBar = {
             TopAppSetting(
-                currentDestination.label,
+                resumeViewModel.currentDestination.label,
                 context.getCurrentLanguage(),
                 context::setLanguage,
                 context.getCurrentMode(),
@@ -50,10 +51,9 @@ fun ResumeApp(modifier: Modifier = Modifier) {
         },
         bottomBar = {
             BottomNavigation(
-                currentDestination,
+                resumeViewModel.currentDestination,
                 Destination.allDestinations,
                 {
-                    currentDestination = it
                     navController.navigate(it.route)
                 },
                 Modifier.fillMaxWidth()
@@ -62,7 +62,7 @@ fun ResumeApp(modifier: Modifier = Modifier) {
     ) {
         NavHost(
             navController = navController,
-            startDestination = startDestination.route,
+            startDestination = Destination.Home.route,
             modifier = modifier
                 .fillMaxSize()
                 .padding(it),
