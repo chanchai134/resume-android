@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="test_tran">ไทย</string>
+    <string name="home_title">หน้าแรก</string>
+    <string name="greetings">"แอพพลิเคชั่นแสดงผลงานใช้เพื่อแสดงฝีมือการสร้างแอนดรอยด์แอพพลิเคชั่นซึ่งนอกเหนือจากการสร้างนี้ยังมีทักษะอื่นๆที่ผมสามารถทำได้อีกมากมาย"</string>
 </resources>

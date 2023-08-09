@@ -3,7 +3,6 @@ package chanchai134.resume.ui.navigation
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.ui.graphics.vector.ImageVector
 import chanchai134.resume.R
 
@@ -12,8 +11,7 @@ enum class Destination(
     @StringRes val label: Int,
     val icon: ImageVector
 ) {
-    Home("home", R.string.app_name, Icons.Filled.Home),
-    Exp("exp", R.string.test_tran, Icons.Filled.Star);
+    Home("home", R.string.home_title, Icons.Filled.Home);
 
     companion object {
         val allDestinations = values()
