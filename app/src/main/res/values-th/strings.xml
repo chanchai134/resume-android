@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="home_title">หน้าแรก</string>
+    <string name="skill_title">ทักษะ</string>
+    <string name="education_title">การศึกษา</string>
+    <string name="experience_title">ประสบการณ์</string>
     <string name="greetings">"แอพพลิเคชั่นแสดงผลงานใช้เพื่อแสดงฝีมือการสร้างแอนดรอยด์แอพพลิเคชั่นซึ่งนอกเหนือจากการสร้างนี้ยังมีทักษะอื่นๆที่ผมสามารถทำได้อีกมากมาย"</string>
 </resources>
