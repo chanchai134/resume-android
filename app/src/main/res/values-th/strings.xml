@@ -4,5 +4,10 @@
     <string name="skill_title">ทักษะ</string>
     <string name="education_title">การศึกษา</string>
     <string name="experience_title">ประสบการณ์</string>
+    <string name="full_name">นาย ชาญชัย ชนาเทพาพร (ปอม)</string>
     <string name="greetings">"แอพพลิเคชั่นแสดงผลงานใช้เพื่อแสดงฝีมือการสร้างแอนดรอยด์แอพพลิเคชั่นซึ่งนอกเหนือจากการสร้างนี้ยังมีทักษะอื่นๆที่ผมสามารถทำได้อีกมากมาย"</string>
+    <string name="call">โทร</string>
+    <string name="e_mail">เขียนอีเมลล์</string>
+    <string name="github">เปิด github</string>
+    <string name="linkedin">เปิด linkedin</string>
 </resources>

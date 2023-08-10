@@ -4,5 +4,10 @@
     <string name="skill_title">Skill</string>
     <string name="education_title">Education</string>
     <string name="experience_title">Experience</string>
+    <string name="full_name">Mr.Chanchai Charnataparporn (Pom)</string>
     <string name="greetings">"This is a portfolio resume application. It shows some part of my android skill but not all capability I can do."</string>
+    <string name="call">make a call</string>
+    <string name="e_mail">create an e-mail</string>
+    <string name="github">open github</string>
+    <string name="linkedin">open linkedin</string>
 </resources>

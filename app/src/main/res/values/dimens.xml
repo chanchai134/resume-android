@@ -2,6 +2,6 @@
 <resources>
     <dimen name="icon">24dp</dimen>
     <dimen name="padding">24dp</dimen>
+    <dimen name="semi_padding">12dp</dimen>
     <dimen name="portrait_width">280dp</dimen>
-    <dimen name="portrait_round_corner">140dp</dimen>
 </resources>
