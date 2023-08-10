@@ -1,5 +1,7 @@
 package chanchai134.resume.ui
 
+import android.content.Intent
+import android.net.Uri
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
@@ -24,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -95,16 +98,50 @@ private fun Information(modifier: Modifier = Modifier) {
             modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            CircleIcon(R.drawable.ic_phone, R.string.call, {})
-            CircleIcon(R.drawable.ic_mail, R.string.e_mail, {})
-            CircleIcon(R.drawable.ic_github, R.string.github, {})
-            CircleIcon(R.drawable.ic_linkedin, R.string.linkedin, {})
+            val context = LocalContext.current
+            val phoneNumber = stringResource(R.string.phone_number)
+            val email = stringResource(R.string.e_mail)
+            val github = stringResource(R.string.github)
+            val linkedin = stringResource(R.string.linkedin)
+
+            CircleIcon(R.drawable.ic_phone, R.string.call, {
+                context.startActivity(
+                    Intent(
+                        Intent.ACTION_DIAL,
+                        Uri.parse("tel:${phoneNumber}")
+                    )
+                )
+            })
+            CircleIcon(R.drawable.ic_mail, R.string.send_mail, {
+                context.startActivity(
+                    Intent(
+                        Intent.ACTION_SENDTO,
+                        Uri.parse("mailto:${email}?subject=send_from_android_app")
+                    )
+                )
+            })
+            CircleIcon(R.drawable.ic_github, R.string.open_github, {
+                context.startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://github.com/${github}")
+                    )
+                )
+            })
+            CircleIcon(R.drawable.ic_linkedin, R.string.open_linkedin, {
+                context.startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://www.linkedin.com/in/${linkedin}/")
+                    )
+                )
+            })
         }
     }
 }
 
 @Composable
-fun CircleIcon(
+private fun CircleIcon(
     @DrawableRes icon: Int,
     @StringRes contentDescription: Int,
     onClick: () -> Unit,

@@ -7,7 +7,11 @@
     <string name="full_name">Mr.Chanchai Charnataparporn (Pom)</string>
     <string name="greetings">"This is a portfolio resume application. It shows some part of my android skill but not all capability I can do."</string>
     <string name="call">make a call</string>
-    <string name="e_mail">create an e-mail</string>
-    <string name="github">open github</string>
-    <string name="linkedin">open linkedin</string>
+    <string name="send_mail">create an e-mail</string>
+    <string name="open_github">open github</string>
+    <string name="open_linkedin">open linkedin</string>
+    <string name="phone_number" translatable="false">+66834419565</string>
+    <string name="e_mail" translatable="false">chanchai51142@gmail.com</string>
+    <string name="github" translatable="false">chanchai134</string>
+    <string name="linkedin" translatable="false">chanchai134</string>
 </resources>
