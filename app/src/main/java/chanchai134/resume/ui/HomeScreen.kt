@@ -65,7 +65,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
         Text(
             text = stringResource(R.string.greetings),
-            style = MaterialTheme.typography.titleLarge,
+            style = MaterialTheme.typography.titleLarge.copy(
+                lineHeight = MaterialTheme.typography.headlineMedium.lineHeight
+            ),
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .padding(horizontal = padding)
@@ -95,12 +97,13 @@ private fun Information(modifier: Modifier = Modifier) {
             modifier = Modifier.padding(dimensionResource(R.dimen.semi_padding))
         )
         Row(
-            modifier.fillMaxWidth(),
+            Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             val context = LocalContext.current
             val phoneNumber = stringResource(R.string.phone_number)
             val email = stringResource(R.string.e_mail)
+            val subjectMail = stringResource(R.string.subject_mail)
             val github = stringResource(R.string.github)
             val linkedin = stringResource(R.string.linkedin)
 
@@ -116,7 +119,7 @@ private fun Information(modifier: Modifier = Modifier) {
                 context.startActivity(
                     Intent(
                         Intent.ACTION_SENDTO,
-                        Uri.parse("mailto:${email}?subject=send_from_android_app")
+                        Uri.parse("mailto:${email}?subject=${subjectMail}")
                     )
                 )
             })
@@ -160,7 +163,7 @@ private fun CircleIcon(
 
 @Preview(showBackground = true)
 @Composable
-fun InformationPreview() {
+private fun InformationPreview() {
     ResumeandroidTheme {
         Information()
     }
@@ -168,7 +171,7 @@ fun InformationPreview() {
 
 @Preview(showBackground = true)
 @Composable
-fun HomeScreenPreview() {
+private fun HomeScreenPreview() {
     ResumeandroidTheme {
         HomeScreen()
     }
