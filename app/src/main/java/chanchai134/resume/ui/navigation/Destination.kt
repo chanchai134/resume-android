@@ -10,8 +10,8 @@ enum class Destination(
     @DrawableRes val icon: Int
 ) {
     Home("home", R.string.home_title, R.drawable.ic_home),
-    Education("education", R.string.education_title, R.drawable.ic_education),
     Experience("experience", R.string.experience_title, R.drawable.ic_exp),
+    Education("education", R.string.education_title, R.drawable.ic_education),
     Skill("skill", R.string.skill_title, R.drawable.ic_skill);
 
     companion object {

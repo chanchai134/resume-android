@@ -1,4 +1,4 @@
-package chanchai134.resume.ui
+package chanchai134.resume.ui.screen.experience
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
