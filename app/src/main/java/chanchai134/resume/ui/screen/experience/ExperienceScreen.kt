@@ -32,7 +32,6 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import chanchai134.resume.R
 import chanchai134.resume.ui.theme.ResumeandroidTheme
@@ -70,31 +69,34 @@ private fun Body(
     LazyColumn(
         modifier,
         listState,
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.semi_padding))
     ) {
         item {
             Position(
                 stringResource(uiState.title),
                 stringResource(uiState.duration),
-                Modifier.padding(top = 24.dp)
+                Modifier.padding(top = dimensionResource(R.dimen.padding))
             )
         }
         item {
             Company(
                 stringResource(uiState.company),
-                Modifier.padding(start = 72.dp)
+                Modifier.padding(start = dimensionResource(R.dimen.padding_3_x))
             )
         }
         item {
             JobDetail(
                 stringResource(uiState.jobDetail),
-                Modifier.padding(start = 36.dp)
+                Modifier.padding(start = dimensionResource(R.dimen.padding_1_5_x))
             )
         }
         item {
             RelatedSkill(
                 uiState.skills,
-                Modifier.padding(start = 36.dp, bottom = 16.dp)
+                Modifier.padding(
+                    start = dimensionResource(R.dimen.padding_1_5_x),
+                    bottom = dimensionResource(R.dimen.two_third_padding)
+                )
             )
         }
     }
@@ -148,13 +150,16 @@ private fun RelatedSkill(skills: List<Int>, modifier: Modifier = Modifier) {
     FlowRow(modifier) {
         skills.forEach {
             Card(
-                Modifier.padding(end = 8.dp,bottom = 8.dp),
+                Modifier.padding(
+                    end = dimensionResource(R.dimen.one_third_padding),
+                    bottom = dimensionResource(R.dimen.one_third_padding)
+                ),
                 MaterialTheme.shapes.small
             ) {
-                Box(Modifier.height(32.dp), Alignment.Center) {
+                Box(Modifier.height(dimensionResource(R.dimen.padding_1_5_x)), Alignment.Center) {
                     Text(
                         stringResource(it),
-                        Modifier.padding(horizontal = 12.dp),
+                        Modifier.padding(horizontal = dimensionResource(R.dimen.semi_padding)),
                         style = MaterialTheme.typography.labelLarge
                     )
                 }

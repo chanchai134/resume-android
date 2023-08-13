@@ -2,6 +2,10 @@
 <resources>
     <dimen name="icon">24dp</dimen>
     <dimen name="padding">24dp</dimen>
+    <dimen name="padding_1_5_x">36dp</dimen>
+    <dimen name="padding_3_x">72dp</dimen>
     <dimen name="semi_padding">12dp</dimen>
+    <dimen name="one_third_padding">8dp</dimen>
+    <dimen name="two_third_padding">16dp</dimen>
     <dimen name="portrait_width">280dp</dimen>
 </resources>
