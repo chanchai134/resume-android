@@ -21,6 +21,8 @@ import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -33,6 +35,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import chanchai134.resume.R
 import chanchai134.resume.ui.theme.ResumeandroidTheme
 
@@ -40,6 +43,9 @@ import chanchai134.resume.ui.theme.ResumeandroidTheme
 fun ExperienceScreen(
     modifier: Modifier = Modifier
 ) {
+    val viewModel = viewModel<ExperienceViewModel>()
+    val uiState by viewModel.uiState.collectAsState()
+
     Column(modifier.fillMaxSize()) {
         val s = remember { mutableStateOf(0) }
         TabRow(selectedTabIndex = s.value) {
@@ -157,6 +163,9 @@ private fun ExperienceScreenPreview() {
 @Composable
 private fun BodyPreview() {
     ResumeandroidTheme {
-        Body(Modifier.fillMaxWidth().padding(horizontal = dimensionResource(R.dimen.padding)))
+        Body(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = dimensionResource(R.dimen.padding)))
     }
 }
