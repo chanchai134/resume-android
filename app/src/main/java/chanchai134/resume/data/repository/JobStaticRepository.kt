@@ -2,8 +2,9 @@ package chanchai134.resume.data.repository
 
 import chanchai134.resume.R
 import chanchai134.resume.data.model.Job
+import javax.inject.Inject
 
-class JobRepositoryImp : JobRepository {
+class JobStaticRepository @Inject constructor() : JobRepository {
     override fun getJobsRange() = _allJobs.map { it.rangeDate }
     override fun getJobByIndex(index: Int): Job = _allJobs[index]
 

@@ -2,13 +2,13 @@ package chanchai134.resume.ui.screen.experience
 
 import androidx.lifecycle.ViewModel
 import chanchai134.resume.data.repository.JobRepository
-import chanchai134.resume.data.repository.JobRepositoryImp
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import javax.inject.Inject
 
-class ExperienceViewModel : ViewModel() {
-    val jobRepository: JobRepository = JobRepositoryImp()
-
+@HiltViewModel
+class ExperienceViewModel @Inject constructor(private val jobRepository: JobRepository) : ViewModel() {
     private val _uiState: MutableStateFlow<ExperienceUiState>
 
     init {

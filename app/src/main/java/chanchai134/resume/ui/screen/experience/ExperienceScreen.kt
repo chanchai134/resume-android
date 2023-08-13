@@ -32,7 +32,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import chanchai134.resume.R
 import chanchai134.resume.ui.theme.ResumeandroidTheme
 
@@ -40,7 +40,7 @@ import chanchai134.resume.ui.theme.ResumeandroidTheme
 fun ExperienceScreen(
     modifier: Modifier = Modifier
 ) {
-    val viewModel = viewModel<ExperienceViewModel>()
+    val viewModel = hiltViewModel<ExperienceViewModel>()
     val uiState by viewModel.uiState.collectAsState()
 
     Column(modifier.fillMaxSize()) {
