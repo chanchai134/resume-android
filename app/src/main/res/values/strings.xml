@@ -15,5 +15,14 @@
     <string name="subject_mail">send from android app</string>
     <string name="github" translatable="false">chanchai134</string>
     <string name="linkedin" translatable="false">chanchai134</string>
-    <string name="job_1_detail">I was a back-end developer in e-commerce company, and my duty was product’s information management. My jobs here are providing new product search mechanism via Elasticsearch, implementing in some part of personalize product’s recommendation and developing API. Domain driven design and unit testing were strictly using to meet business requirement while developing API. Another job was sharing knowledge about tools such as Elasticsearch, Apache Kafka, etc.</string>
+    <string name="job_1_title">Data Scientist</string>
+    <string name="job_1_duration">3 months</string>
+    <string name="job_1_range">June – August 2019</string>
+    <string name="job_1_company">PTT Digital Solutions Co., Ltd</string>
+    <string name="job_1_detail">I was assigned as a research developer in a rating prediction by Thai language restaurant review project. The project is individual responsibility.               A technique for development is deep learning. My procedures are data crawling, finding the best accuracy model, models are coming from research database provided by my university, and implement a program respectively.</string>
+    <string name="job_2_title">Back-End Developer</string>
+    <string name="job_2_duration">2 years</string>
+    <string name="job_2_range">July 2020 - July 2022</string>
+    <string name="job_2_company">King Power Click Co., Ltd</string>
+    <string name="job_2_detail">I was a back-end developer in e-commerce company, and my duty was product’s information management. My jobs here are providing new product search mechanism via Elasticsearch, implementing in some part of personalize product’s recommendation and developing API. Domain driven design and unit testing were strictly using to meet business requirement while developing API. Another job was sharing knowledge about tools such as Elasticsearch, Apache Kafka, etc.</string>
 </resources>

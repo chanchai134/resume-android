@@ -9,8 +9,7 @@ import kotlinx.coroutines.flow.asStateFlow
 class ExperienceViewModel : ViewModel() {
     val jobRepository: JobRepository = JobRepositoryImp()
 
-    private lateinit var _uiState: MutableStateFlow<ExperienceUiState>
-    val uiState = _uiState.asStateFlow()
+    private val _uiState: MutableStateFlow<ExperienceUiState>
 
     init {
         val ranges = jobRepository.getJobsRange()
@@ -20,6 +19,8 @@ class ExperienceViewModel : ViewModel() {
             ExperienceUiState(0,ranges,title,duration,company,jobDetail,skills)
         )
     }
+
+    val uiState = _uiState.asStateFlow()
 
     fun setJobByIndex(index: Int) {
         val (title,_,duration,company,jobDetail,skills) = jobRepository.getJobByIndex(index)

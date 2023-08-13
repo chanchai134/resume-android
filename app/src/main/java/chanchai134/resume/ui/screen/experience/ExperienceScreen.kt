@@ -23,8 +23,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
@@ -47,25 +45,24 @@ fun ExperienceScreen(
     val uiState by viewModel.uiState.collectAsState()
 
     Column(modifier.fillMaxSize()) {
-        val s = remember { mutableStateOf(0) }
-        TabRow(selectedTabIndex = s.value) {
-            Tab(
-                selected = s.value == 0,
-                onClick = { if(s.value != 0) s.value = 0 },
-                text = { Text("July 2020 - July 2022") }
-            )
-            Tab(
-                selected = s.value == 1,
-                onClick = { if(s.value != 1) s.value = 1 },
-                text = { Text("June – August 2019") }
-            )
+        TabRow(selectedTabIndex = uiState.selectedIndex) {
+            uiState.rangeTitleTab.forEachIndexed { index, i ->
+                Tab(
+                    selected = index == uiState.selectedIndex,
+                    onClick = {
+                        if (index != uiState.selectedIndex) viewModel.setJobByIndex(index)
+                    },
+                    text = { Text(stringResource(i)) }
+                )
+            }
         }
-        Body(Modifier.padding(horizontal = dimensionResource(R.dimen.padding)))
+        Body(uiState, Modifier.padding(horizontal = dimensionResource(R.dimen.padding)))
     }
 }
 
 @Composable
 private fun Body(
+    uiState: ExperienceUiState,
     modifier: Modifier = Modifier
 ) {
     val listState = rememberLazyListState()
@@ -75,12 +72,28 @@ private fun Body(
         listState,
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        item { Position(Modifier.padding(top = 24.dp)) }
-        item { Company(Modifier.padding(start = 72.dp)) }
-        item { JobDetail(Modifier.padding(start = 36.dp)) }
+        item {
+            Position(
+                stringResource(uiState.title),
+                stringResource(uiState.duration),
+                Modifier.padding(top = 24.dp)
+            )
+        }
+        item {
+            Company(
+                stringResource(uiState.company),
+                Modifier.padding(start = 72.dp)
+            )
+        }
+        item {
+            JobDetail(
+                stringResource(uiState.jobDetail),
+                Modifier.padding(start = 36.dp)
+            )
+        }
         item {
             RelatedSkill(
-                listOf(R.string.app_name,R.string.call, R.string.linkedin, R.string.github, R.string.app_name,R.string.call, R.string.linkedin, R.string.github),
+                uiState.skills,
                 Modifier.padding(start = 36.dp, bottom = 16.dp)
             )
         }
@@ -88,7 +101,7 @@ private fun Body(
 }
 
 @Composable
-private fun Position(modifier: Modifier = Modifier) {
+private fun Position(title: String, exp: String, modifier: Modifier = Modifier) {
     Row(modifier, verticalAlignment = Alignment.CenterVertically) {
         Icon(
             painterResource(R.drawable.ic_exp), null,
@@ -100,20 +113,20 @@ private fun Position(modifier: Modifier = Modifier) {
         Text(
             buildAnnotatedString {
                 pushStyle(MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Medium).toSpanStyle())
-                append("Back-End Developer")
+                append(title)
                 pop()
                 pushStyle(MaterialTheme.typography.bodyLarge.copy(fontStyle = FontStyle.Italic).toSpanStyle())
                 append("  ")
-                append("(2 years)")
+                append("($exp)")
             }
         )
     }
 }
 
 @Composable
-private fun Company(modifier: Modifier = Modifier) {
+private fun Company(company: String, modifier: Modifier = Modifier) {
     Text(
-        """@ King Power Click Co., Ltd""",
+        "@ $company",
         modifier,
         style = MaterialTheme.typography.bodyLarge,
         fontStyle = FontStyle.Italic
@@ -121,9 +134,9 @@ private fun Company(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun JobDetail(modifier: Modifier = Modifier) {
+private fun JobDetail(detail: String, modifier: Modifier = Modifier) {
     Text(
-        "    ${stringResource(R.string.job_1_detail)}",
+        "    $detail",
         modifier,
         style = MaterialTheme.typography.bodyLarge
     )
@@ -164,6 +177,14 @@ private fun ExperienceScreenPreview() {
 private fun BodyPreview() {
     ResumeandroidTheme {
         Body(
+            ExperienceUiState(
+                0,listOf(),
+                R.string.job_2_title,
+                R.string.job_2_duration,
+                R.string.job_2_company,
+                R.string.job_2_detail,
+                listOf(R.string.github)
+            ),
             Modifier
                 .fillMaxWidth()
                 .padding(horizontal = dimensionResource(R.dimen.padding)))

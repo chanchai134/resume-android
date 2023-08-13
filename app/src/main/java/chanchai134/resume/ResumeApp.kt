@@ -3,7 +3,6 @@ package chanchai134.resume
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -23,7 +22,6 @@ import chanchai134.resume.ui.navigation.Destination
 import chanchai134.resume.ui.navigation.ResumeNavigationGraph
 import chanchai134.resume.ui.setting.TopAppSetting
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ResumeApp(modifier: Modifier = Modifier) {
     val context = LocalContext.current
