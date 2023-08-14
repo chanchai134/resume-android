@@ -9,7 +9,7 @@ class SkillViewModelTest {
     private val skillViewModel = SkillViewModel(fakeSkillSetRepository)
 
     @Test
-    fun skillViewModelTest_initial_correctUiState() {
+    fun skillViewModel_initial_correctUiState() {
         val expectedUiState = SkillSetUiState(listOf(
             SkillSetUiState.Skill(2,2,listOf(2,2)),
             SkillSetUiState.Skill(1,1,listOf(1))
