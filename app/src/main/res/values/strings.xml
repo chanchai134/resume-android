@@ -13,7 +13,7 @@
     <string name="phone_number" translatable="false">+66834419565</string>
     <string name="e_mail" translatable="false">chanchai51142@gmail.com</string>
     <string name="subject_mail">send from android app</string>
-    <string name="github" translatable="false">chanchai134</string>
+    <string name="github" translatable="false">chanchai134/resume-android</string>
     <string name="linkedin" translatable="false">chanchai134</string>
     <string name="job_1_title">Data Scientist</string>
     <string name="job_1_duration">3 months</string>
