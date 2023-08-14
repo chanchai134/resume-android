@@ -1,4 +1,4 @@
-package chanchai134.resume.ui
+package chanchai134.resume.ui.screen.skill
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,11 +26,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import chanchai134.resume.R
 import chanchai134.resume.ui.theme.ResumeandroidTheme
 
 @Composable
 fun SkillScreen(modifier: Modifier = Modifier) {
+    val viewModel = hiltViewModel<SkillViewModel>()
     val semiPadding = dimensionResource(R.dimen.semi_padding)
 
     LazyVerticalGrid(GridCells.Fixed(2),
@@ -40,45 +42,9 @@ fun SkillScreen(modifier: Modifier = Modifier) {
                 horizontal = dimensionResource(R.dimen.padding)
             )
     ) {
-        skillList(R.string.android, R.drawable.ic_android, listOf(
-            R.string.kotlin,
-            R.string.android_studio,
-            R.string.view,
-            R.string.view_binding,
-            R.string.data_binding,
-            R.string.jetpack_compose,
-            R.string.view_model,
-            R.string.coroutine,
-            R.string.git,
-            R.string.room,
-            R.string.data_store,
-            R.string.retrofit,
-            R.string.graph_ql,
-            R.string.mockito,
-            R.string.oop,
-            R.string.reactive_programing
-        ))
-        skillList(R.string.back_end_eveloper, R.drawable.ic_backend, listOf(
-            R.string.node_js,
-            R.string.typescript,
-            R.string.javascript,
-            R.string.c_sharp,
-            R.string.asp_net,
-            R.string.python,
-            R.string.aws,
-            R.string.graph_ql,
-            R.string.rxjs,
-            R.string.git,
-            R.string.elasticsearch,
-            R.string.logstash,
-            R.string.mongodb,
-            R.string.sql,
-            R.string.kafka,
-            R.string.nifi,
-            R.string.docker,
-            R.string.oop,
-            R.string.ddd
-        ))
+        viewModel.uiState.allSkill.forEach {
+            skillList(it.title, it.icon, it.skills)
+        }
         padding(semiPadding)
     }
 }

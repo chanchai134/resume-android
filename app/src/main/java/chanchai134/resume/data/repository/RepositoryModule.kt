@@ -13,4 +13,8 @@ abstract class RepositoryModule {
     @Singleton
     @Binds
     abstract fun bindJobRepository(jobStaticRepository: JobStaticRepository): JobRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindSkillSetRepository(skillSetStaticRepository: SkillSetStaticRepository): SkillSetRepository
 }
