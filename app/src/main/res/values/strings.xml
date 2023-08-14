@@ -57,6 +57,7 @@
     <string name="room" translatable="false">Room</string>
     <string name="data_store" translatable="false">DataStore</string>
     <string name="retrofit" translatable="false">Retrofit</string>
+    <string name="mockito" translatable="false">Mockito</string>
     <string name="back_end_eveloper">Back-End Developer</string>
     <string name="android">Android Developer</string>
 </resources>

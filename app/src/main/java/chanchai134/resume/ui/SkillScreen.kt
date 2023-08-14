@@ -50,11 +50,11 @@ fun SkillScreen(modifier: Modifier = Modifier) {
             R.string.view_model,
             R.string.coroutine,
             R.string.git,
-            R.string.sql,
             R.string.room,
             R.string.data_store,
             R.string.retrofit,
             R.string.graph_ql,
+            R.string.mockito,
             R.string.oop,
             R.string.reactive_programing
         ))
