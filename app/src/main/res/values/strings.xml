@@ -25,4 +25,36 @@
     <string name="job_2_range">July 2020 - July 2022</string>
     <string name="job_2_company">King Power Click Co., Ltd</string>
     <string name="job_2_detail">I was a back-end developer in e-commerce company, and my duty was product’s information management. My jobs here are providing new product search mechanism via Elasticsearch, implementing in some part of personalize product’s recommendation and developing API. Domain driven design and unit testing were strictly using to meet business requirement while developing API. Another job was sharing knowledge about tools such as Elasticsearch, Apache Kafka, etc.</string>
+    <string name="python" translatable="false">Python</string>
+    <string name="keras" translatable="false">Keras</string>
+    <string name="git" translatable="false">git</string>
+    <string name="node_js" translatable="false">Node.js</string>
+    <string name="javascript" translatable="false">JavaScript</string>
+    <string name="typescript" translatable="false">TypeScript</string>
+    <string name="c_sharp" translatable="false">C#</string>
+    <string name="asp_net" translatable="false">ASP.NET MVC</string>
+    <string name="aws" translatable="false">AWS</string>
+    <string name="graph_ql" translatable="false">GraphQL</string>
+    <string name="oop" translatable="false">OOP</string>
+    <string name="ddd" translatable="false">Domain Driven Design</string>
+    <string name="elasticsearch" translatable="false">Elasticsearch</string>
+    <string name="logstash" translatable="false">Logstash</string>
+    <string name="mongodb" translatable="false">MongoDB</string>
+    <string name="sql" translatable="false">SQL</string>
+    <string name="kafka" translatable="false">Apache Kafka</string>
+    <string name="nifi" translatable="false">Apache NiFi</string>
+    <string name="docker" translatable="false">Docker</string>
+    <string name="rxjs" translatable="false">RxJS</string>
+    <string name="kotlin" translatable="false">Kotlin</string>
+    <string name="android_studio" translatable="false">Android Studio</string>
+    <string name="reactive_programing" translatable="false">Reactive Programing</string>
+    <string name="view" translatable="false">View</string>
+    <string name="view_binding" translatable="false">View Binding</string>
+    <string name="data_binding" translatable="false">Data Binding</string>
+    <string name="jetpack_compose" translatable="false">Jetpack Compose</string>
+    <string name="view_model" translatable="false">ViewModel</string>
+    <string name="coroutine" translatable="false">Coroutine</string>
+    <string name="room" translatable="false">Room</string>
+    <string name="data_store" translatable="false">DataStore</string>
+    <string name="retrofit" translatable="false">Retrofit</string>
 </resources>
