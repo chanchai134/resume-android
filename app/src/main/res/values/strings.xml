@@ -27,7 +27,7 @@
     <string name="job_2_detail">I was a back-end developer in e-commerce company, and my duty was product’s information management. My jobs here are providing new product search mechanism via Elasticsearch, implementing in some part of personalize product’s recommendation and developing API. Domain driven design and unit testing were strictly using to meet business requirement while developing API. Another job was sharing knowledge about tools such as Elasticsearch, Apache Kafka, etc.</string>
     <string name="python" translatable="false">Python</string>
     <string name="keras" translatable="false">Keras</string>
-    <string name="git" translatable="false">git</string>
+    <string name="git" translatable="false">Git</string>
     <string name="node_js" translatable="false">Node.js</string>
     <string name="javascript" translatable="false">JavaScript</string>
     <string name="typescript" translatable="false">TypeScript</string>
@@ -57,4 +57,6 @@
     <string name="room" translatable="false">Room</string>
     <string name="data_store" translatable="false">DataStore</string>
     <string name="retrofit" translatable="false">Retrofit</string>
+    <string name="back_end_eveloper">Back-End Developer</string>
+    <string name="android">Android Developer</string>
 </resources>

@@ -21,4 +21,6 @@
     <string name="job_2_range">July 2020 - July 2022</string>
     <string name="job_2_company">King Power Click Co., Ltd</string>
     <string name="job_2_detail">I was a back-end developer in e-commerce company, and my duty was product’s information management. My jobs here are providing new product search mechanism via Elasticsearch, implementing in some part of personalize product’s recommendation and developing API. Domain driven design and unit testing were strictly using to meet business requirement while developing API. Another job was sharing knowledge about tools such as Elasticsearch, Apache Kafka, etc.</string>
+    <string name="back_end_eveloper">นักพัฒนาซอฟต์แวร์</string>
+    <string name="android">นักพัฒนาแอปพลิเคชั่นแอนดรอยด์</string>
 </resources>

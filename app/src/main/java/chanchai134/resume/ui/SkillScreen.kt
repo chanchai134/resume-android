@@ -40,8 +40,45 @@ fun SkillScreen(modifier: Modifier = Modifier) {
                 horizontal = dimensionResource(R.dimen.padding)
             )
     ) {
-        skillList(R.string.app_name, R.drawable.ic_android, listOf(R.string.app_name,R.string.call, R.string.linkedin, R.string.github, R.string.app_name))
-        skillList(R.string.app_name, R.drawable.ic_backend, listOf(R.string.app_name,R.string.call, R.string.linkedin, R.string.github, R.string.app_name))
+        skillList(R.string.android, R.drawable.ic_android, listOf(
+            R.string.kotlin,
+            R.string.android_studio,
+            R.string.view,
+            R.string.view_binding,
+            R.string.data_binding,
+            R.string.jetpack_compose,
+            R.string.view_model,
+            R.string.coroutine,
+            R.string.git,
+            R.string.sql,
+            R.string.room,
+            R.string.data_store,
+            R.string.retrofit,
+            R.string.graph_ql,
+            R.string.oop,
+            R.string.reactive_programing
+        ))
+        skillList(R.string.back_end_eveloper, R.drawable.ic_backend, listOf(
+            R.string.node_js,
+            R.string.typescript,
+            R.string.javascript,
+            R.string.c_sharp,
+            R.string.asp_net,
+            R.string.python,
+            R.string.aws,
+            R.string.graph_ql,
+            R.string.rxjs,
+            R.string.git,
+            R.string.elasticsearch,
+            R.string.logstash,
+            R.string.mongodb,
+            R.string.sql,
+            R.string.kafka,
+            R.string.nifi,
+            R.string.docker,
+            R.string.oop,
+            R.string.ddd
+        ))
         padding(semiPadding)
     }
 }
