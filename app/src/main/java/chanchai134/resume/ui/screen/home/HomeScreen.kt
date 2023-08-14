@@ -1,4 +1,4 @@
-package chanchai134.resume.ui
+package chanchai134.resume.ui.screen.home
 
 import android.content.Intent
 import android.net.Uri
@@ -33,11 +33,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.hilt.navigation.compose.hiltViewModel
 import chanchai134.resume.R
 import chanchai134.resume.ui.theme.ResumeandroidTheme
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
+    val viewModel = hiltViewModel<HomeViewModel>()
+    val uiState = viewModel.uiState
+
     val scrollState = rememberScrollState()
 
     ConstraintLayout(
@@ -49,9 +53,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         val padding = dimensionResource(R.dimen.padding)
 
         Image(
-            painter = painterResource(R.drawable.portrait),
+            painter = painterResource(uiState.portrait),
             contentScale = ContentScale.Fit,
-            contentDescription = "owner portrait",
+            contentDescription = null,
             modifier = Modifier
                 .width(dimensionResource(R.dimen.portrait_width))
                 .aspectRatio(1f)
@@ -64,7 +68,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         )
 
         Text(
-            text = stringResource(R.string.greetings),
+            text = stringResource(uiState.greetings),
             style = MaterialTheme.typography.titleLarge.copy(
                 lineHeight = MaterialTheme.typography.headlineMedium.lineHeight
             ),
@@ -80,7 +84,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 }
         )
 
-        Information(modifier.constrainAs(footerRef) {
+        Information(uiState, modifier.constrainAs(footerRef) {
             bottom.linkTo(parent.bottom,padding)
             start.linkTo(parent.start)
             end.linkTo(parent.end)
@@ -89,10 +93,10 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun Information(modifier: Modifier = Modifier) {
+private fun Information(uiState: HomeUiState, modifier: Modifier = Modifier) {
     Column(modifier.width(IntrinsicSize.Max)) {
         Text(
-            text = stringResource(R.string.full_name),
+            text = stringResource(uiState.fullName),
             style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier.padding(dimensionResource(R.dimen.semi_padding))
         )
@@ -101,13 +105,13 @@ private fun Information(modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             val context = LocalContext.current
-            val phoneNumber = stringResource(R.string.phone_number)
-            val email = stringResource(R.string.e_mail)
-            val subjectMail = stringResource(R.string.subject_mail)
-            val github = stringResource(R.string.github)
-            val linkedin = stringResource(R.string.linkedin)
+            val phoneNumber = stringResource(uiState.phoneNumber)
+            val email = stringResource(uiState.email)
+            val subjectMail = stringResource(uiState.subjectMail)
+            val github = stringResource(uiState.github)
+            val linkedin = stringResource(uiState.linkedin)
 
-            CircleIcon(R.drawable.ic_phone, R.string.call, {
+            CircleIcon(uiState.iconPhone, uiState.call, {
                 context.startActivity(
                     Intent(
                         Intent.ACTION_DIAL,
@@ -115,7 +119,7 @@ private fun Information(modifier: Modifier = Modifier) {
                     )
                 )
             })
-            CircleIcon(R.drawable.ic_mail, R.string.send_mail, {
+            CircleIcon(uiState.iconMail, uiState.sendMail, {
                 context.startActivity(
                     Intent(
                         Intent.ACTION_SENDTO,
@@ -123,7 +127,7 @@ private fun Information(modifier: Modifier = Modifier) {
                     )
                 )
             })
-            CircleIcon(R.drawable.ic_github, R.string.open_github, {
+            CircleIcon(uiState.iconGithub, uiState.openGithub, {
                 context.startActivity(
                     Intent(
                         Intent.ACTION_VIEW,
@@ -131,7 +135,7 @@ private fun Information(modifier: Modifier = Modifier) {
                     )
                 )
             })
-            CircleIcon(R.drawable.ic_linkedin, R.string.open_linkedin, {
+            CircleIcon(uiState.iconLinkedin, uiState.openLinkedin, {
                 context.startActivity(
                     Intent(
                         Intent.ACTION_VIEW,
@@ -165,7 +169,26 @@ private fun CircleIcon(
 @Composable
 private fun InformationPreview() {
     ResumeandroidTheme {
-        Information()
+        Information(
+            HomeUiState(
+                R.drawable.portrait,
+                R.drawable.ic_phone,
+                R.drawable.ic_mail,
+                R.drawable.ic_github,
+                R.drawable.ic_linkedin,
+                R.string.greetings,
+                R.string.full_name,
+                R.string.phone_number,
+                R.string.e_mail,
+                R.string.subject_mail,
+                R.string.github,
+                R.string.linkedin,
+                R.string.call,
+                R.string.send_mail,
+                R.string.open_github,
+                R.string.open_linkedin
+            )
+        )
     }
 }
 
