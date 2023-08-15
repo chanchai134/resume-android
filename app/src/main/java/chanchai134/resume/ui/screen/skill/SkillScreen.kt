@@ -33,6 +33,12 @@ import chanchai134.resume.ui.theme.ResumeandroidTheme
 @Composable
 fun SkillScreen(modifier: Modifier = Modifier) {
     val viewModel = hiltViewModel<SkillViewModel>()
+
+    Screen(viewModel.uiState, modifier)
+}
+
+@Composable
+private fun Screen(uiState: SkillSetUiState, modifier: Modifier = Modifier) {
     val semiPadding = dimensionResource(R.dimen.semi_padding)
 
     LazyVerticalGrid(GridCells.Fixed(2),
@@ -42,7 +48,7 @@ fun SkillScreen(modifier: Modifier = Modifier) {
                 horizontal = dimensionResource(R.dimen.padding)
             )
     ) {
-        viewModel.uiState.allSkill.forEach {
+        uiState.allSkill.forEach {
             skillList(it.title, it.icon, it.skills)
         }
         padding(semiPadding)
@@ -93,8 +99,29 @@ private fun LazyGridScope.padding(size: Dp) {
 
 @Preview(showBackground = true)
 @Composable
-private fun SkillScreenPreview() {
+private fun ScreenPreview() {
     ResumeandroidTheme {
-        SkillScreen()
+        Screen(SkillSetUiState(listOf(
+            SkillSetUiState.Skill(
+                R.string.android,
+                R.drawable.ic_android,
+                listOf(
+                    R.string.kotlin,
+                    R.string.android_studio,
+                    R.string.view,
+                    R.string.view_binding,
+                )
+            ),
+            SkillSetUiState.Skill(
+                R.string.back_end_eveloper,
+                R.drawable.ic_backend,
+                listOf(
+                    R.string.node_js,
+                    R.string.typescript,
+                    R.string.javascript,
+                    R.string.ddd
+                )
+            )
+        )))
     }
 }

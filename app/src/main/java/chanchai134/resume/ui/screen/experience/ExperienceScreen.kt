@@ -37,19 +37,26 @@ import chanchai134.resume.R
 import chanchai134.resume.ui.theme.ResumeandroidTheme
 
 @Composable
-fun ExperienceScreen(
-    modifier: Modifier = Modifier
-) {
+fun ExperienceScreen(modifier: Modifier = Modifier) {
     val viewModel = hiltViewModel<ExperienceViewModel>()
     val uiState by viewModel.uiState.collectAsState()
 
+    Screen(uiState, viewModel::setJobByIndex, modifier)
+}
+
+@Composable
+private fun Screen(
+    uiState: ExperienceUiState,
+    setJobByIndex: (Int) -> Unit,
+    modifier: Modifier = Modifier
+) {
     Column(modifier.fillMaxSize()) {
         TabRow(selectedTabIndex = uiState.selectedIndex) {
             uiState.rangeTitleTab.forEachIndexed { index, i ->
                 Tab(
                     selected = index == uiState.selectedIndex,
                     onClick = {
-                        if (index != uiState.selectedIndex) viewModel.setJobByIndex(index)
+                        if (index != uiState.selectedIndex) setJobByIndex(index)
                     },
                     text = { Text(stringResource(i)) }
                 )
@@ -170,9 +177,19 @@ private fun RelatedSkill(skills: List<Int>, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-private fun ExperienceScreenPreview() {
+private fun ScreenPreview() {
     ResumeandroidTheme {
-        ExperienceScreen()
+        Screen(
+            ExperienceUiState(
+                0,listOf(R.string.job_2_range, R.string.job_1_range),
+                R.string.job_2_title,
+                R.string.job_2_duration,
+                R.string.job_2_company,
+                R.string.job_2_detail,
+                listOf(R.string.ddd)
+            ),
+            {}
+        )
     }
 }
 
@@ -188,7 +205,7 @@ private fun BodyPreview() {
                 R.string.job_2_duration,
                 R.string.job_2_company,
                 R.string.job_2_detail,
-                listOf(R.string.github)
+                listOf(R.string.ddd)
             ),
             Modifier
                 .fillMaxWidth()

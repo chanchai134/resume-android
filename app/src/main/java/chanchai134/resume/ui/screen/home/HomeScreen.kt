@@ -40,8 +40,12 @@ import chanchai134.resume.ui.theme.ResumeandroidTheme
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
     val viewModel = hiltViewModel<HomeViewModel>()
-    val uiState = viewModel.uiState
 
+    Screen(viewModel.uiState, modifier)
+}
+
+@Composable
+private fun Screen(uiState: HomeUiState, modifier: Modifier = Modifier) {
     val scrollState = rememberScrollState()
 
     ConstraintLayout(
@@ -194,8 +198,27 @@ private fun InformationPreview() {
 
 @Preview(showBackground = true)
 @Composable
-private fun HomeScreenPreview() {
+private fun ScreenPreview() {
     ResumeandroidTheme {
-        HomeScreen()
+        Screen(
+            HomeUiState(
+                R.drawable.portrait,
+                R.drawable.ic_phone,
+                R.drawable.ic_mail,
+                R.drawable.ic_github,
+                R.drawable.ic_linkedin,
+                R.string.greetings,
+                R.string.full_name,
+                R.string.phone_number,
+                R.string.e_mail,
+                R.string.subject_mail,
+                R.string.github,
+                R.string.linkedin,
+                R.string.call,
+                R.string.send_mail,
+                R.string.open_github,
+                R.string.open_linkedin
+            )
+        )
     }
 }
