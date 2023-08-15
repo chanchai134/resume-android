@@ -19,7 +19,7 @@
     <string name="job_1_duration">3 months</string>
     <string name="job_1_range">June – August 2019</string>
     <string name="job_1_company">PTT Digital Solutions Co., Ltd</string>
-    <string name="job_1_detail">I was assigned as a research developer in a rating prediction by Thai language restaurant review project. The project is individual responsibility.               A technique for development is deep learning. My procedures are data crawling, finding the best accuracy model, models are coming from research database provided by my university, and implement a program respectively.</string>
+    <string name="job_1_detail">I was assigned as a research developer in a rating prediction by Thai language restaurant review project. The project is individual responsibility. A technique for development is deep learning. My procedures are data crawling, finding the best accuracy model, models are coming from research database provided by my university, and implement a program respectively.</string>
     <string name="job_2_title">Back-End Developer</string>
     <string name="job_2_duration">2 years</string>
     <string name="job_2_range">July 2020 - July 2022</string>

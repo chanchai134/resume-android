@@ -11,16 +11,16 @@
     <string name="subject_mail">ส่งจากแอพพลิเคชั่นแอนดรอยด์</string>
     <string name="open_github">เปิด github</string>
     <string name="open_linkedin">เปิด linkedin</string>
-    <string name="job_1_title">Data Scientist</string>
-    <string name="job_1_duration">3 months</string>
-    <string name="job_1_range">June – August 2019</string>
-    <string name="job_1_company">PTT Digital Solutions Co., Ltd</string>
+    <string name="job_1_title">นักวิทยาศาสตร์ข้อมูล</string>
+    <string name="job_1_duration">3 เดือน</string>
+    <string name="job_1_range">มิ.ย. – ส.ค. 62</string>
+    <string name="job_1_company">บริษัท พีทีทีดิจิตอลโซลูชั่น จำกัด</string>
     <string name="job_1_detail">I was assigned as a research developer in a rating prediction by Thai language restaurant review project. The project is individual responsibility.               A technique for development is deep learning. My procedures are data crawling, finding the best accuracy model, models are coming from research database provided by my university, and implement a program respectively.</string>
-    <string name="job_2_title">Back-End Developer</string>
-    <string name="job_2_duration">2 years</string>
-    <string name="job_2_range">July 2020 - July 2022</string>
-    <string name="job_2_company">King Power Click Co., Ltd</string>
-    <string name="job_2_detail">I was a back-end developer in e-commerce company, and my duty was product’s information management. My jobs here are providing new product search mechanism via Elasticsearch, implementing in some part of personalize product’s recommendation and developing API. Domain driven design and unit testing were strictly using to meet business requirement while developing API. Another job was sharing knowledge about tools such as Elasticsearch, Apache Kafka, etc.</string>
+    <string name="job_2_title">นักพัฒนาซอฟต์แวร์</string>
+    <string name="job_2_duration">2 ปี</string>
+    <string name="job_2_range">ก.ค. 63 - ก.ค. 65</string>
+    <string name="job_2_company">บริษัท คิงเพาเวอร์คลิก จำกัด</string>
+    <string name="job_2_detail">ผมได้ทำหน้าที่นักพัฒนาซอฟต์แวร์ในบริษัทขายสินค้าออนไลน์ โดยมอบหมายให้จัดการในส่วนของข้อมูลสินค้าเช่น ระบบค้นหาสินค้าด้วย Elasticsearch, การนำเสนอสินค้าเฉพาะบุคคล และการพัฒนา API ซึ่งการพัฒนา API ได้ใช้ทฤษฎีการออกแบบซอฟต์แวร์แบบ Domain driven design และการเทดสอบระบบร่วมด้วย ในส่วนของงานอื่นๆได้แก่ การสอนใช้เครื่องมือสมัยใหม่ให้เพื่อนร่วมงานเช่น Elasticsearch, Apache Kafka</string>
     <string name="back_end_eveloper">นักพัฒนาซอฟต์แวร์</string>
     <string name="android">นักพัฒนาแอปพลิเคชั่นแอนดรอยด์</string>
 </resources>
