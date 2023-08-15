@@ -88,7 +88,7 @@ private fun Screen(uiState: HomeUiState, modifier: Modifier = Modifier) {
                 }
         )
 
-        Information(uiState, modifier.constrainAs(footerRef) {
+        Information(uiState, Modifier.constrainAs(footerRef) {
             bottom.linkTo(parent.bottom,padding)
             start.linkTo(parent.start)
             end.linkTo(parent.end)
