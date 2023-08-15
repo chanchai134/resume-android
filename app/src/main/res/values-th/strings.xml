@@ -15,7 +15,7 @@
     <string name="job_1_duration">3 เดือน</string>
     <string name="job_1_range">มิ.ย. – ส.ค. 62</string>
     <string name="job_1_company">บริษัท พีทีทีดิจิตอลโซลูชั่น จำกัด</string>
-    <string name="job_1_detail">I was assigned as a research developer in a rating prediction by Thai language restaurant review project. The project is individual responsibility.               A technique for development is deep learning. My procedures are data crawling, finding the best accuracy model, models are coming from research database provided by my university, and implement a program respectively.</string>
+    <string name="job_1_detail">ผมได้รับมอบหมายให้วิจัยและพัฒนาระบบทำนายคะแนนความพึงพอใจจากความคิดเห็นในร้านอาหาร โดยโปรเจคนี้เป็นโปรเจคเดี่ยวที่ใช้โมเดลการเรียนรู้แบบ deep learning ซึ่งมีขั้นตอนดังนี้ ขั้นแรกเก็บรวบรวมข้อมูลความคิดเห็นและความพึงพอใจจากเว็บไซต์หลังจากนั้น ศึกษาโมลเดลที่เหมาะสมจากฐานข้อมูลการวิจัย และขั้นสุดท้ายคือเลือกใช้โมลที่ให้ความแม่นยำสูงสุด</string>
     <string name="job_2_title">นักพัฒนาซอฟต์แวร์</string>
     <string name="job_2_duration">2 ปี</string>
     <string name="job_2_range">ก.ค. 63 - ก.ค. 65</string>
