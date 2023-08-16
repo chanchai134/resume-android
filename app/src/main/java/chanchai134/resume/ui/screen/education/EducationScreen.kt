@@ -1,6 +1,5 @@
 package chanchai134.resume.ui.screen.education
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -95,10 +94,9 @@ private fun Item(description: String, range: String, modifier: Modifier = Modifi
     }
 }
 
-@Preview("Light", showBackground = true)
-@Preview("Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(showBackground = true)
 @Composable
-fun ScreenPreview() {
+private fun ScreenPreview() {
     ResumeandroidTheme {
         Screen(EducationUiState(listOf(
             EducationUiState.Education(R.string.education_2_description, R.string.education_2_range)

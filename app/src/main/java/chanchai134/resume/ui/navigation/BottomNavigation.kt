@@ -49,7 +49,7 @@ fun BottomNavigation(
 @Preview("Light", showBackground = true)
 @Preview("Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun BottomNavigationPreview() {
+private fun BottomNavigationPreview() {
     ResumeandroidTheme {
         BottomNavigation(Destination.Home, Destination.allDestinations, {})
     }

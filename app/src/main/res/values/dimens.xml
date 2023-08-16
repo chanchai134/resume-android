@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="icon">24dp</dimen>
+    <dimen name="icon_button">40dp</dimen>
     <dimen name="padding">24dp</dimen>
     <dimen name="padding_1_5_x">36dp</dimen>
     <dimen name="padding_3_x">72dp</dimen>
