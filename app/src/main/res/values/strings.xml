@@ -15,6 +15,11 @@
     <string name="subject_mail">send from android app</string>
     <string name="github" translatable="false">chanchai134/resume-android</string>
     <string name="linkedin" translatable="false">chanchai134</string>
+    <string name="education_bg">Education Background</string>
+    <string name="education_1_description">High school, Mathematically gifted program, Suankularb Wittayalai School</string>
+    <string name="education_1_range">2010 – 2015</string>
+    <string name="education_2_description">Bachelor of computer engineering, Kasetsart University (GPA 3.82)</string>
+    <string name="education_2_range">2016 – 2020</string>
     <string name="job_1_title">Data Scientist</string>
     <string name="job_1_duration">3 months</string>
     <string name="job_1_range">June – August 2019</string>

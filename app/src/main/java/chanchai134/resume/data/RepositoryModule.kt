@@ -1,5 +1,7 @@
 package chanchai134.resume.data
 
+import chanchai134.resume.data.repository.EducationRepository
+import chanchai134.resume.data.repository.EducationStaticRepository
 import chanchai134.resume.data.repository.HomeRepository
 import chanchai134.resume.data.repository.HomeStaticRepository
 import chanchai134.resume.data.repository.JobRepository
@@ -22,6 +24,10 @@ abstract class RepositoryModule {
     @Singleton
     @Binds
     abstract fun bindJobRepository(jobStaticRepository: JobStaticRepository): JobRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindEducationRepository(educationStaticRepository: EducationStaticRepository): EducationRepository
 
     @Singleton
     @Binds

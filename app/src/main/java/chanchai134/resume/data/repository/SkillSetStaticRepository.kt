@@ -5,7 +5,7 @@ import chanchai134.resume.data.model.SkillSet
 import javax.inject.Inject
 
 class SkillSetStaticRepository @Inject constructor() : SkillSetRepository {
-    override fun getAllSkillSet(): List<SkillSet> = listOf(
+    override fun getAllSkillSet() = listOf(
         SkillSet(
             R.string.android,
             R.drawable.ic_android,
