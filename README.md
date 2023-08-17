@@ -4,3 +4,5 @@ Resume application is a showcase of implement an android app in Jetpack Compose 
 #### Requirement
 - Android gradle plugin >= 8.0.1 (Android Studio Flamingo)
 - SDK >= 33
+#### Video
+- https://youtu.be/ilr0QjcC9wA
