@@ -10,6 +10,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -23,10 +24,12 @@ import chanchai134.resume.ui.navigation.ResumeNavigationGraph
 import chanchai134.resume.ui.setting.TopAppSetting
 
 @Composable
-fun ResumeApp(modifier: Modifier = Modifier) {
+fun ResumeApp(
+    modifier: Modifier = Modifier,
+    navController: NavHostController = rememberNavController()
+) {
     val context = LocalContext.current
     val currentDestination = rememberSaveable { arrayOf(Destination.Home) }
-    val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
 
     backStackEntry?.let {
