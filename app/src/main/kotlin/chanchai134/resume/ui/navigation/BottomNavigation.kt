@@ -1,6 +1,5 @@
 package chanchai134.resume.ui.navigation
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
@@ -13,8 +12,8 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import chanchai134.resume.R
+import chanchai134.resume.ui.LightDarkPreviews
 import chanchai134.resume.ui.theme.ResumeandroidTheme
 
 @Composable
@@ -48,8 +47,7 @@ fun BottomNavigation(
     }
 }
 
-@Preview("Light", showBackground = true)
-@Preview("Dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@LightDarkPreviews
 @Composable
 private fun BottomNavigationPreview() {
     ResumeandroidTheme {

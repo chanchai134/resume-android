@@ -1,6 +1,5 @@
 package chanchai134.resume.ui.screen.experience
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,9 +32,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import chanchai134.resume.R
+import chanchai134.resume.ui.LightDarkPreviews
 import chanchai134.resume.ui.theme.ResumeandroidTheme
 
 @Composable
@@ -177,8 +176,7 @@ private fun RelatedSkill(skills: List<Int>, modifier: Modifier = Modifier) {
     }
 }
 
-@Preview("LightMode", showBackground = true)
-@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
+@LightDarkPreviews
 @Composable
 private fun ScreenPreview() {
     ResumeandroidTheme {
@@ -198,8 +196,7 @@ private fun ScreenPreview() {
     }
 }
 
-@Preview("LightMode", showBackground = true)
-@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
+@LightDarkPreviews
 @Composable
 private fun BodyPreview() {
     ResumeandroidTheme {

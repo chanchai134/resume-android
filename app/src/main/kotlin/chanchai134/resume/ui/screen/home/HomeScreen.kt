@@ -1,7 +1,6 @@
 package chanchai134.resume.ui.screen.home
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.net.Uri
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -33,10 +32,10 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.hilt.navigation.compose.hiltViewModel
 import chanchai134.resume.R
+import chanchai134.resume.ui.LightDarkPreviews
 import chanchai134.resume.ui.theme.ResumeandroidTheme
 
 @Composable
@@ -171,8 +170,7 @@ private fun CircleIcon(
     }
 }
 
-@Preview("LightMode", showBackground = true)
-@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
+@LightDarkPreviews
 @Composable
 private fun InformationPreview() {
     ResumeandroidTheme {
@@ -201,8 +199,7 @@ private fun InformationPreview() {
     }
 }
 
-@Preview("LightMode", showBackground = true)
-@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
+@LightDarkPreviews
 @Composable
 private fun ScreenPreview() {
     ResumeandroidTheme {

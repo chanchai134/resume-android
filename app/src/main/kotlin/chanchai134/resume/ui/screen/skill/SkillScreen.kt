@@ -1,6 +1,5 @@
 package chanchai134.resume.ui.screen.skill
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,11 +24,11 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import chanchai134.resume.R
+import chanchai134.resume.ui.LightDarkPreviews
 import chanchai134.resume.ui.theme.ResumeandroidTheme
 
 @Composable
@@ -99,8 +98,7 @@ private fun LazyGridScope.padding(size: Dp) {
     }
 }
 
-@Preview("LightMode", showBackground = true)
-@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
+@LightDarkPreviews
 @Composable
 private fun ScreenPreview() {
     ResumeandroidTheme {
