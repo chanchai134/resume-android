@@ -1,5 +1,6 @@
 package chanchai134.resume.ui.screen.skill
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,6 +16,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -97,31 +99,34 @@ private fun LazyGridScope.padding(size: Dp) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview("LightMode", showBackground = true)
+@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 private fun ScreenPreview() {
     ResumeandroidTheme {
-        Screen(SkillSetUiState(listOf(
-            SkillSetUiState.Skill(
-                R.string.android,
-                R.drawable.ic_android,
-                listOf(
-                    R.string.kotlin,
-                    R.string.android_studio,
-                    R.string.view,
-                    R.string.view_binding,
+        Surface {
+            Screen(SkillSetUiState(listOf(
+                SkillSetUiState.Skill(
+                    R.string.android,
+                    R.drawable.ic_android,
+                    listOf(
+                        R.string.kotlin,
+                        R.string.android_studio,
+                        R.string.view,
+                        R.string.view_binding,
+                    )
+                ),
+                SkillSetUiState.Skill(
+                    R.string.back_end_eveloper,
+                    R.drawable.ic_backend,
+                    listOf(
+                        R.string.node_js,
+                        R.string.typescript,
+                        R.string.javascript,
+                        R.string.ddd
+                    )
                 )
-            ),
-            SkillSetUiState.Skill(
-                R.string.back_end_eveloper,
-                R.drawable.ic_backend,
-                listOf(
-                    R.string.node_js,
-                    R.string.typescript,
-                    R.string.javascript,
-                    R.string.ddd
-                )
-            )
-        )))
+            )))
+        }
     }
 }

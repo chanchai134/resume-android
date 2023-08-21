@@ -1,5 +1,6 @@
 package chanchai134.resume.ui.screen.education
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -12,6 +13,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -94,12 +96,15 @@ private fun Item(description: String, range: String, modifier: Modifier = Modifi
     }
 }
 
-@Preview(showBackground = true)
+@Preview("LightMode", showBackground = true)
+@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 private fun ScreenPreview() {
     ResumeandroidTheme {
-        Screen(EducationUiState(listOf(
-            EducationUiState.Education(R.string.education_2_description, R.string.education_2_range)
-        )))
+        Surface {
+            Screen(EducationUiState(listOf(
+                EducationUiState.Education(R.string.education_2_description, R.string.education_2_range)
+            )))
+        }
     }
 }

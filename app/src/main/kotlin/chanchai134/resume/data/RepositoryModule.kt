@@ -17,19 +17,15 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
-    @Singleton
     @Binds
     abstract fun bindHomeRepository(homeStaticRepository: HomeStaticRepository): HomeRepository
 
-    @Singleton
     @Binds
     abstract fun bindJobRepository(jobStaticRepository: JobStaticRepository): JobRepository
 
-    @Singleton
     @Binds
     abstract fun bindEducationRepository(educationStaticRepository: EducationStaticRepository): EducationRepository
 
-    @Singleton
     @Binds
     abstract fun bindSkillSetRepository(skillSetStaticRepository: SkillSetStaticRepository): SkillSetRepository
 }

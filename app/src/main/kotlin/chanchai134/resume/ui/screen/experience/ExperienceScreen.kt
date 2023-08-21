@@ -1,5 +1,6 @@
 package chanchai134.resume.ui.screen.experience
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,6 +18,7 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
@@ -175,40 +177,46 @@ private fun RelatedSkill(skills: List<Int>, modifier: Modifier = Modifier) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview("LightMode", showBackground = true)
+@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 private fun ScreenPreview() {
     ResumeandroidTheme {
-        Screen(
-            ExperienceUiState(
-                0,listOf(R.string.job_2_range, R.string.job_1_range),
-                R.string.job_2_title,
-                R.string.job_2_duration,
-                R.string.job_2_company,
-                R.string.job_2_detail,
-                listOf(R.string.ddd)
-            ),
-            {}
-        )
+        Surface {
+            Screen(
+                ExperienceUiState(
+                    0,listOf(R.string.job_2_range, R.string.job_1_range),
+                    R.string.job_2_title,
+                    R.string.job_2_duration,
+                    R.string.job_2_company,
+                    R.string.job_2_detail,
+                    listOf(R.string.ddd)
+                ),
+                {}
+            )
+        }
     }
 }
 
-
-@Preview(showBackground = true)
+@Preview("LightMode", showBackground = true)
+@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 private fun BodyPreview() {
     ResumeandroidTheme {
-        Body(
-            ExperienceUiState(
-                0,listOf(),
-                R.string.job_2_title,
-                R.string.job_2_duration,
-                R.string.job_2_company,
-                R.string.job_2_detail,
-                listOf(R.string.ddd)
-            ),
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = dimensionResource(R.dimen.padding)))
+        Surface {
+            Body(
+                ExperienceUiState(
+                    0,listOf(),
+                    R.string.job_2_title,
+                    R.string.job_2_duration,
+                    R.string.job_2_company,
+                    R.string.job_2_detail,
+                    listOf(R.string.ddd)
+                ),
+                Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = dimensionResource(R.dimen.padding))
+            )
+        }
     }
 }

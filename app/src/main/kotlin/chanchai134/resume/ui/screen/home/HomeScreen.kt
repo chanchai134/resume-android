@@ -1,6 +1,7 @@
 package chanchai134.resume.ui.screen.home
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -21,6 +22,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedIconButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -169,56 +171,62 @@ private fun CircleIcon(
     }
 }
 
-@Preview(showBackground = true)
+@Preview("LightMode", showBackground = true)
+@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 private fun InformationPreview() {
     ResumeandroidTheme {
-        Information(
-            HomeUiState(
-                R.drawable.portrait,
-                R.drawable.ic_phone,
-                R.drawable.ic_mail,
-                R.drawable.ic_github,
-                R.drawable.ic_linkedin,
-                R.string.greetings,
-                R.string.full_name,
-                R.string.phone_number,
-                R.string.e_mail,
-                R.string.subject_mail,
-                R.string.github,
-                R.string.linkedin,
-                R.string.call,
-                R.string.send_mail,
-                R.string.open_github,
-                R.string.open_linkedin
+        Surface {
+            Information(
+                HomeUiState(
+                    R.drawable.portrait,
+                    R.drawable.ic_phone,
+                    R.drawable.ic_mail,
+                    R.drawable.ic_github,
+                    R.drawable.ic_linkedin,
+                    R.string.greetings,
+                    R.string.full_name,
+                    R.string.phone_number,
+                    R.string.e_mail,
+                    R.string.subject_mail,
+                    R.string.github,
+                    R.string.linkedin,
+                    R.string.call,
+                    R.string.send_mail,
+                    R.string.open_github,
+                    R.string.open_linkedin
+                )
             )
-        )
+        }
     }
 }
 
-@Preview(showBackground = true)
+@Preview("LightMode", showBackground = true)
+@Preview("DarkMode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 private fun ScreenPreview() {
     ResumeandroidTheme {
-        Screen(
-            HomeUiState(
-                R.drawable.portrait,
-                R.drawable.ic_phone,
-                R.drawable.ic_mail,
-                R.drawable.ic_github,
-                R.drawable.ic_linkedin,
-                R.string.greetings,
-                R.string.full_name,
-                R.string.phone_number,
-                R.string.e_mail,
-                R.string.subject_mail,
-                R.string.github,
-                R.string.linkedin,
-                R.string.call,
-                R.string.send_mail,
-                R.string.open_github,
-                R.string.open_linkedin
+        Surface {
+            Screen(
+                HomeUiState(
+                    R.drawable.portrait,
+                    R.drawable.ic_phone,
+                    R.drawable.ic_mail,
+                    R.drawable.ic_github,
+                    R.drawable.ic_linkedin,
+                    R.string.greetings,
+                    R.string.full_name,
+                    R.string.phone_number,
+                    R.string.e_mail,
+                    R.string.subject_mail,
+                    R.string.github,
+                    R.string.linkedin,
+                    R.string.call,
+                    R.string.send_mail,
+                    R.string.open_github,
+                    R.string.open_linkedin
+                )
             )
-        )
+        }
     }
 }
